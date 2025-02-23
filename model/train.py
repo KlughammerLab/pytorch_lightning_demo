@@ -34,19 +34,22 @@ if __name__ == "__main__":
     train_loader = DataLoader(
         list(zip(train_data, train_targets)),
         batch_size=10,
-        shuffle=True
+        shuffle=True,
+        num_workers=2,
     )
 
     val_loader = DataLoader(
         list(zip(train_data, train_targets)),
         batch_size=10,
-        shuffle=False
+        shuffle=False,
+        num_workers=2,
     )
 
     test_loader = DataLoader(
         list(zip(train_data, train_targets)),
         batch_size=10,
-        shuffle=False
+        shuffle=False,
+        num_workers=2,
     )
 
     ###########################################################################

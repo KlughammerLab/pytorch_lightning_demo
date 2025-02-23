@@ -42,7 +42,7 @@ class LinearModel(pl.LightningModule):
             sch_eta_min:float = 1e-6
         ) -> None:
         super(LinearModel, self).__init__()
-        self.save_hyperparameters()
+        self.save_hyperparameters(ignore=['criterion'])
         self.model = nn.Sequential(
             nn.Linear(input_dim, output_dim),
             nn.Flatten(start_dim=1, end_dim=-1),
